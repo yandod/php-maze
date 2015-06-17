@@ -1,0 +1,18 @@
+{
+    "name": "yandod/php-maze",
+    "authors": [
+        {
+            "name": "Yusuke Ando",
+            "email": "yandod@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload":{
+      "psr-4": {
+        "PHPMaze\\": "src/PHPMaze/"
+      }
+    },
+    "scripts": {
+      "test": "test/maze.php"
+    }
+}

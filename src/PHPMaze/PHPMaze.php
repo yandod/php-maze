@@ -6,7 +6,7 @@ class PHPMaze {
   public $dimension = 11;
   public $seed = null;
 
-  public __construct($seed = null){
+  public function __construct($seed = null){
     $this->seed = $seed;
   }
 

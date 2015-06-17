@@ -49,7 +49,7 @@ class PHPMaze {
         if(count($directions) == 0) {
             return $field;
         }
-        $dir = $directions[floor(rand(0,1)*count($directions))];
+        $dir = $directions[floor(rand(0,1000)/1000*count($directions))];
         $field[$x+$dir[0]][$y+$dir[1]] = false;
         $field = $this->iterate($field, $x+$dir[0]*2, $y+$dir[1]*2);
     }

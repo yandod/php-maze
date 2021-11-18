@@ -23,7 +23,7 @@ class PHPMaze
     {
         // Initialize the field.
         if (isset($this->seed)) {
-            srand($this->seed);
+            mt_srand($this->seed,MT_RAND_PHP);
         }
         $field = array_fill(0, $dimension, 0);
         $this->dimension = $dimension;

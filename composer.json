@@ -17,6 +17,6 @@
       }
     },
     "scripts": {
-      "test": "test/maze.php"
+      "test": "tests/maze.php"
     }
 }

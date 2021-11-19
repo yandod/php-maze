@@ -4,32 +4,33 @@ namespace PHPMaze;
 class PHPMaze
 {
 
-    public $dimension = 11;
-    public $seed = null;
+    public int $seed = 0;
+    public int $dimension = 11;
 
     /**
-     * @param null $seed
+     * @param 0 $seed
+     * @param 11 $dimension
      */
-    public function __construct($seed = null)
+    public function __construct($seed = 0, $dimension = 11)
     {
         $this->seed = $seed;
+        $this->dimension = $dimension;
+
+        // Initialize rand with seed.
+        if (isset($this->seed)) {
+            mt_srand($this->seed,MT_RAND_PHP);
+        }        
     }
 
     /**
-     * @param int $dimension
      * @return array|mixed
      */
-    public function generate($dimension = 11)
+    public function generate()
     {
-        // Initialize the field.
-        if (isset($this->seed)) {
-            mt_srand($this->seed,MT_RAND_PHP);
-        }
-        $field = array_fill(0, $dimension, 0);
-        $this->dimension = $dimension;
-        for ($i = 0; $i < $dimension; $i++) {
-            $field[$i] = array_fill(0, $dimension, 0);
-            for ($j = 0; $j < $dimension; $j++) {
+        $field = array_fill(0, $this->dimension, 0);
+        for ($i = 0; $i < $this->dimension; $i++) {
+            $field[$i] = array_fill(0, $this->dimension, 0);
+            for ($j = 0; $j < $this->dimension; $j++) {
                 $field[$i][$j] = true;
             }
         }
@@ -70,5 +71,24 @@ class PHPMaze
             $field[$x + $dir[0]][$y + $dir[1]] = false;
             $field = $this->iterate($field, $x + $dir[0] * 2, $y + $dir[1] * 2);
         }
+    }
+    
+    /**
+     * @param array $field
+     * @return string
+     */
+    public function toString($field) {
+        $string = '';
+        foreach ($field as $line) {
+            foreach ($line as $cell) {
+                if ($cell) {
+                    $string .= '#';
+                } else {
+                    $string .= ' ';
+                }
+            }
+            $string .= "\n";
+        }
+        return $string;
     }
 }

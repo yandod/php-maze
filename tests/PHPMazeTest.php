@@ -17,7 +17,7 @@ class PHPMazeTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->object = new \PHPMaze\PHPMaze(1);
+        $this->object = new \PHPMaze\PHPMaze(1, 7);
     }
 
     /**
@@ -30,7 +30,7 @@ class PHPMazeTest extends \PHPUnit_Framework_TestCase
 
     public function testSmallMaze()
     {
-      $maze = $this->object->generate(7);
+      $maze = $this->object->generate();
       $this->assertNotEmpty($maze);
       $exp = [
         [true, true, true, true, true, true, true],

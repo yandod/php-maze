@@ -7,6 +7,8 @@ if (file_exists($a = realpath(__DIR__.'/../../../autoload.php'))) {
     require_once realpath(__DIR__.'/../vendor/autoload.php');
 }
 
-$maze = new \PHPMaze\PHPMaze();
+$opts = getopt('', ['size:']);
+
+$maze = new \PHPMaze\PHPMaze(0, $opts['size']);
 $data = $maze->generate();
-var_dump($data);
+echo $maze->toString($data);

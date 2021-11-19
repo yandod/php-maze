@@ -4,16 +4,16 @@ generate maze in php
 
 Makefile contains standalone executable script with Docker.
 
-'''bash
+```bash
 make setup
 make run
-'''
+```
 
 ## execute from compoer
 
 execution from compoer support different size of maze.
 size has to be odd number more than 7.
 
-'''bash
+```bash
 composer run test -- --size=SIZE_OF_MAZE
-'''
+```

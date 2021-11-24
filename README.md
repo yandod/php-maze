@@ -17,3 +17,11 @@ size has to be odd number more than 7.
 ```bash
 composer run test -- --size=SIZE_OF_MAZE
 ```
+
+## generate coverage report on docker
+
+report will be generated under report directory in project.
+
+```bash
+make coverage
+```

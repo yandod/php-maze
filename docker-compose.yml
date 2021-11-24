@@ -10,3 +10,10 @@ services:
     working_dir: /var/www/html
     volumes:
       - .:/var/www/html:cached
+  xdebug:
+    image: mileschou/xdebug:7.4
+    environment:
+      - XDEBUG_MODE=coverage
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html:cached

@@ -43,5 +43,14 @@ class PHPMazeTest extends \PHPUnit_Framework_TestCase
       ];
       $this->assertEquals($exp, $maze);
       $this->assertTrue(true);
+
+        $exp =  "#######\n";
+        $exp .= "#   # #\n";
+        $exp .= "### # #\n";
+        $exp .= "# #   #\n";
+        $exp .= "# ### #\n";
+        $exp .= "#     #\n";
+        $exp .= "#######\n";
+      $this->assertEquals($exp, $this->object->toString($maze));
     }
 }
